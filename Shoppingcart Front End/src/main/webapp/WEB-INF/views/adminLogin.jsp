@@ -40,7 +40,7 @@
 		<jsp:include page="viewcategory.jsp"></jsp:include>
 	</c:if>
 	
-	<c:if test="${isUserClickedEdit_Category=='true'}">
+	<c:if test="${isUserClickedEdit=='true'}">
 		<jsp:include page="editcategory.jsp"></jsp:include>
 	</c:if>
 	

@@ -35,7 +35,7 @@
   <td>${category.id}</td>
    <td>${category.name}</td>
     <td>${category.description}</td>
-    <td>edit</td>
+    <td><a href="editCategory?categoryId=${category.id}" >edit</a></td>
     <td><a href="deleteCategory?categoryId=${category.id}" >delete</a></td>
   
   </tr>

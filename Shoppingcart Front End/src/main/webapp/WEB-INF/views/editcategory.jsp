@@ -131,18 +131,18 @@ button {
 	<div class="col-lg-8">
 		
 		
-		<form action="newCategory" method="post" style="border:3px solid #ccc">
+		<form action="afterEditCategory" method="post" style="border:3px solid #ccc">
 		  <div class="container">
 		  
 		  	<label><b>ID</b></label>
-		  	<input type="text" placeholder="enter the ID" name="id" required>
+		  	<input type="text" placeholder="enter the ID" name="id" value="${category.id}" readonly="true" }>
 		  	
 		  	<label><b>Name</b></label>
-		  	<input type="text" placeholder="Name of the product" name="name" required>
+		  	<input type="text" placeholder="Name of the product" name="name" value="${category.name}">
 
 		
 		    <label><b>Description</b></label>
-		    <input type="text" placeholder="description" name="description" required>
+		    <input type="text" placeholder="description" name="description" value="${category.description}">
 		    
 		
 		    <div class="clearfix">
