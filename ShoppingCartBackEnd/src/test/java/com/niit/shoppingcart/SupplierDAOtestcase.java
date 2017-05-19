@@ -40,6 +40,7 @@ public class SupplierDAOtestcase {
 		supplier.setName("shun");
 		supplier.setContact("243242424");
 		supplier.setMail("ad@gmail.com");
+		supplier.setDescription("tyedytd");
 		supplier.setAddress("sdbdsbvdbh,fdsfdsdsg.");
 		supplier.setCitycode("6848884648");
 		

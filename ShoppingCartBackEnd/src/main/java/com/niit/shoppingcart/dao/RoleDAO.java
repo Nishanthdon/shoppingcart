@@ -10,4 +10,5 @@ public interface RoleDAO {
 	public boolean update(Role role);
     
 	public List<Role>     list();
+	public Role getByEmailId(String name);
 }

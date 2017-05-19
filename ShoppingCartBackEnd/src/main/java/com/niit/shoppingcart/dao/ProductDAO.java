@@ -11,4 +11,6 @@ public interface ProductDAO {
 	public boolean update(Product product);
     
 	public List<Product>     list();
+	
+	public void delete(String id);
 }

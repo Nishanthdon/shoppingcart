@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.niit.shoppingcart.dao.ProductDAO;
+import com.niit.shoppingcart.domain.Category;
 import com.niit.shoppingcart.domain.Product;
 
 
@@ -66,6 +67,14 @@ public class ProductDAOImpl implements ProductDAO {
 		// and set it to User class
 		//like select * from user where id = ?
 	  return 	(Product)  sessionFactory.getCurrentSession().get(Product.class, id);
+		
+	}
+	
+	
+	public void delete(String id) {
+		Product productToDelete = new Product();
+		productToDelete.setId(id);
+        sessionFactory.getCurrentSession().delete(productToDelete);
 		
 	}
 

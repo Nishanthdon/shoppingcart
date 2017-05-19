@@ -60,4 +60,18 @@ public class RoleDAOImpl implements RoleDAO {
 	}
 
 	
+	public Role getByEmailId(String email) {
+		String hql = "from Role where email ='"+ email +"'";
+		org.hibernate.Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		@SuppressWarnings("unchecked")
+		List<Role> listRole = (List<Role>) query.list();
+		
+		if (listRole != null && !listRole.isEmpty()){
+			return listRole.get(0);
+		}
+		return null;
+
+	}
+	
+	
 }

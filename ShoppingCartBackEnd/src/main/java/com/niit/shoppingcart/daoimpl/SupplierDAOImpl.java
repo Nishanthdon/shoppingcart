@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.niit.shoppingcart.dao.SupplierDAO;
+import com.niit.shoppingcart.domain.Category;
 import com.niit.shoppingcart.domain.Supplier;
 
 @Repository("SupplierDAO")
@@ -59,5 +60,14 @@ public class SupplierDAOImpl implements SupplierDAO{
 		return true;
 	}
 
+	
+	public void delete(String id) {
+		Supplier supplierToDelete = new Supplier();
+		supplierToDelete.setId(id);
+        sessionFactory.getCurrentSession().delete(supplierToDelete);
+		
+	}
+	
+	
 	
 }
