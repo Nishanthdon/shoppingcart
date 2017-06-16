@@ -1,4 +1,4 @@
-<beans xmlns="http://www.springframework.org/schema/beans"
+ <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:security="http://www.springframework.org/schema/security"
        xmlns:webflow-config="http://www.springframework.org/schema/webflow-config"
@@ -14,16 +14,16 @@
 <!-- http://locahost:8080/ShoppingCart/intercept_url -->
 
 <!--  intercept url starting-->
-		<!-- <security:intercept-url pattern="/manage**"
+		<!-- <security:intercept-url pattern="/manage**" 
 			access="hasRole('ROLE_ADMIN')" />
 
     	<security:intercept-url pattern="/myCart/**"
-			access="hasRole('ROLE_USER')" />
+			access="hasRole('ROLE_USER')" /> 
 
 		<security:intercept-url pattern="/cart_checkout**"
 			access="hasRole('ROLE_USER')" /> -->
 <!--  intercept url Ending-->	
-			
+			 
 	
 	<!-- 	<security:access-denied-handler
 			error-page="/accessDenied" />
