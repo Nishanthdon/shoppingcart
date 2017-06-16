@@ -13,13 +13,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
+
 <body>
 
-<p> View Supplier </p>
+
+<h4 style="color: red">Suppliers: </h4>
+
+<br>
+<div class="col-lg-1"></div>
+<div class="col-lg-10">
 
 <table class = "table table-bordered">
    
-      <tr>
+      <tr style="background-color: #56b881">
        <td>S.NO</td>
       	<th>ID</th>
       	<th>Name</th>
@@ -36,22 +42,24 @@
 	 <c:forEach items="${supplierList}" var="supplier" varStatus="status">
   <tr>
   <td>${status.count}</td>
-  <td>${supplier.id}</td>
-   <td>${supplier.name}</td>
+  <td>${supplier.supplierid}</td>
+   <td>${supplier.suppliername}</td>
     <td>${supplier.description}</td>
     <td>${supplier.contact}</td>
     <td>${supplier.mail}</td>
     <td>${supplier.address}</td>
     <td>${supplier.citycode}</td>
-    <td>edit</td>
-    <td><a href="deleteSupplier?supplierId=${supplier.id}" >delete</a></td>
+    <td><a href="editSupplier?supplierId=${supplier.supplierid}" ><button style="background-color: green; color: white; border-radius:10px;">edit </button></a></td>
+    <td><a href="deleteSupplier?supplierId=${supplier.supplierid}" > <button style="background-color: red; color: white; border-radius:10px;">delete </button></a></td>
   
   </tr>
   
   </c:forEach>
 
-
-
 </table>
+</div>
+<div class="col-lg-1"></div>
+
+
 </body>
 </html>

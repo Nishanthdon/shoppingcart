@@ -18,15 +18,25 @@
 
 <title>Admin</title>
 
+<style type="text/css">
 
+.pr{
+height:10px;
+z-index: -1;
+}
+
+</style>
 
 
 </head>
 <body>
 
+
 <jsp:include page="Head.jsp"></jsp:include>
 
+<br><br><br><br><br><br><br>
 
+<div class="col-lg-12 pr"></div>
 
 <h3 align="center" style="color: red;">
 	YOU CAN VIEW AND EDIT THE SITE HERE
@@ -66,6 +76,14 @@
 	
 	<c:if test="${isUserClickedEdit_Supplier=='true'}">
 		<jsp:include page="editsupplier.jsp"></jsp:include>
+	</c:if>
+	
+	<c:if test="${isUserClickedEdit1=='true'}">
+		<jsp:include page="editsupplier.jsp"></jsp:include>
+	</c:if>
+	
+	<c:if test="${isUserClickedEdit2=='true'}">
+		<jsp:include page="editproduct.jsp"></jsp:include>
 	</c:if>
 
 

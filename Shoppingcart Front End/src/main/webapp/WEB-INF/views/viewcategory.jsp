@@ -12,15 +12,30 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+
+<style type="text/css">
+
+
+
+</style>
+
+
+
 </head>
 <body>
 
-<p> View Category </p>
 
+
+<h4 style="color: red"> CATEGORIES: </h4>
+
+<br>
+
+<div class="col-lg-1"></div>
+<div class="col-lg-10">
 <table class = "table table-bordered">
     
  
-      <tr>
+      <tr style="background-color:#56b881">
       <td>S.NO</td>
        	 <th>ID</th>
          <th>Name</th>
@@ -32,11 +47,11 @@
   <c:forEach items="${categoryList}" var="category" varStatus="status">
   <tr>
   <td>${status.count}</td>
-  <td>${category.id}</td>
-   <td>${category.name}</td>
+  <td>${category.categoryid}</td>
+   <td>${category.categoryname}</td>
     <td>${category.description}</td>
-    <td><a href="editCategory?categoryId=${category.id}" >edit</a></td>
-    <td><a href="deleteCategory?categoryId=${category.id}" >delete</a></td>
+    <td><a href="editCategory?categoryId=${category.categoryid}" > <button style="background-color: green; color: white; border-radius:10px;"> edit </button></a></td>
+    <td><a href="deleteCategory?categoryId=${category.categoryid}" > <button style="background-color: red; color: white; border-radius:10px;"> delete </button></a></td>
   
   </tr>
   
@@ -45,6 +60,8 @@
   
 	
 </table>
+</div>
+<div class="col-lg-1"></div>
 
 </body>
 </html>

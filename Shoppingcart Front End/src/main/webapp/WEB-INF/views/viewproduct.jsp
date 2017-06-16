@@ -13,22 +13,36 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
+
+
 <body>
 
-<p> View Product </p>
+
+<h4 style="color: red">Products: </h4>
+
+<br>
+
+
 
 <table class = "table table-bordered">
    
    
-      <tr>
+      <tr style="background-color: #56b881">
       <td>S.NO</td>
       	 <th>ID</th>
       	 <th>Name</th>
+      	 <th>Brand</th>
+      	 <th>Category</th>
+      	 <th>Supplier</th>
       	 <th>Description</th>
       	 <th>Prize</th>
-      	 <th>Brand</th>
       	 <th>Color</th>
       	 <th>Quantity</th>
+      	 <th>RAM</th>
+      	 <th>Battery</th>
+      	 <th>Camera</th>
+      	 <th>Internal Storage</th>
+      	 <th>Video URL</th>
          <th>EDIT</th>
          <th>DELETE</th>
          
@@ -37,15 +51,22 @@
    <c:forEach items="${productList}" var="product" varStatus="status">
   <tr>
   <td>${status.count}</td>
-  <td>${product.id}</td>
-   <td>${product.name}</td>
+  <td>${product.productid}</td>
+   <td>${product.productname}</td>
+   <td>${product.brand}</td>
+   <td>${product.category}</td>
+   <td>${product.supplier}</td>
     <td>${product.description}</td>
     <td>${product.price}</td>
-    <td>${product.brand}</td>
     <td>${product.colour}</td>
     <td>${product.quantity}</td>
-    <td>edit</td>
-    <td><a href="deleteProduct?productId=${product.id}" >delete</a></td>
+    <td>${product.ram}</td>
+    <td>${product.battery}</td>
+    <td>${product.camera}</td>
+    <td>${product.internalstorage}</td>
+    <td>${product.videourl}</td>
+    <td><a href="editProduct?productId=${product.productid}" > <button style="background-color: green; color: white; border-radius:10px;">edit </button></a></td>
+    <td><a href="deleteProduct?productId=${product.productid}" > <button style="background-color: red; color: white; border-radius:10px;">delete </button></a></td>
   
   </tr>
   

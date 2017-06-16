@@ -19,42 +19,6 @@
 
 
 
-.pa{
-height:60px;
-}
-.pb{
-height:450px;
-}
-.pc{
-height:350px;
-}
-.pn{
-height:20px;
-}
-
-
-
-
-
-.foot1{
-    background-color: #56a0d3;
-    height: 240px;
-}
-
-.foot2{
-	background-color: #16214d;
-	height: 130px;
-}
-
-.foot3{
-	background-color:black;
-	height: 30px;
-}
-
-
-
-
-
 /* Full-width input fields */
 input[type=text], input[type=password] {
     width: 100%;
@@ -120,22 +84,21 @@ button {
 <body>
 
 
-
 <div class="col-lg-12 pn" style="z-index: -1"> </div>
 
-<p> Add Supplier </p>
+<h4 style="color: red;"> Add a Supplier: </h4>
 
 <div class="col-lg-12" style="z-index: -1">
 	<div class="col-lg-2"></div>
 	<div class="col-lg-8">
 		
 		
-		<form action="newSupplier" method="post" style="border:3px solid #ccc">
+		<form action="newSupplier" method="post" style="border:3px solid #56b881">
 		  <div class="container">
 		  
 		  	
 		  	<label><b>Name</b></label>
-		  	<input type="text" placeholder="Name of the product" name="name" required>
+		  	<input type="text" placeholder="Name of the product" name="suppliername" required>
 
 		    <label><b>Description</b></label>
 		    <input type="text" placeholder="description" name="description" required>
@@ -154,7 +117,7 @@ button {
 		    
 		
 		    <div class="clearfix">
-		      <a href="http://localhost:8080/SampleFE/"> <button type="button" class="cancelbtn">Cancel</button> </a>
+		      <a href="http://localhost:8080/SampleFE/afterlogin"> <button type="button" class="cancelbtn">Cancel</button> </a>
 		      <button type="submit" class="signupbtn">Submit</button>
 		    </div>
 		  </div>

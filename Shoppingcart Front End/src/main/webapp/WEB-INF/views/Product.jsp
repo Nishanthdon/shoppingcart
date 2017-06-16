@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -15,41 +16,6 @@
 <title>Product Page</title>
 
 <style type="text/css">
-
-
-
-
-.pa{
-height:60px;
-}
-.pb{
-height:450px;
-}
-.pc{
-height:350px;
-}
-.pn{
-height:20px;
-}
-
-
-
-
-
-.foot1{
-    background-color: #56a0d3;
-    height: 240px;
-}
-
-.foot2{
-	background-color: #16214d;
-	height: 130px;
-}
-
-.foot3{
-	background-color:black;
-	height: 30px;
-}
 
 
 
@@ -122,38 +88,72 @@ button {
 
 <div class="col-lg-12 pn" style="z-index: -1"> </div>
 
-<p> Add Product </p>
+<h4 style="color: red"> Add a Product: </h4>
 
 <div class="col-lg-12" style="z-index: -1">
 	<div class="col-lg-2"></div>
 	<div class="col-lg-8">
 		
 		
-		<form action="newProduct" method="post" style="border:3px solid #ccc">
+		<form action="newProduct" method="post" enctype="multipart/form-data"  style="border:3px solid #56b881">
 		  <div class="container">
 		  
 		  	
 		  	<label><b>Name</b></label>
-		  	<input type="text" placeholder="Name of the product" name="name" required>
-
+		  	<input type="text" placeholder="Name of the product" name="productname" required>
+		  	
+		  	<label><b>Brand</b></label>
+		    <input type="text" placeholder="enter the brand" name="brand" required>
+		    
+		    <select name="category">
+  			<option value="">Select Category</option>
+  			<c:forEach items="${categoryList}" var="category"><br><br>
+  				 <option value="${category.categoryname}">${category.categoryname}</option> 
+  				
+  			</c:forEach>
+	   </select> 
+ <br><br>  
+	  <select name="supplier">
+  			<option value="">Select Supplier</option>
+  			<c:forEach items="${supplierList}" var="supplier"><br><br>
+  				<option value="${supplier.suppliername}">${supplier.suppliername}</option>
+  			</c:forEach>
+	  </select>
 		
 		    <label><b>Description</b></label>
 		    <input type="text" placeholder="description" name="description" required>
 		    
+		    <label><b>Image</b></label>
+		    <input type="file" placeholder="enter the colour" name="image" id="file" required>
+		    
+		    <br>
+		    
 		    <label><b>Price</b></label>
 		    <input type="text" placeholder="enter the price" name="price" required>
-		    
-		    <label><b>Brand</b></label>
-		    <input type="text" placeholder="enter the brand" name="brand" required>
 		    
 		    <label><b>Colour</b></label>
 		    <input type="text" placeholder="enter the colour" name="colour" required>
 		    
 		    <label><b>quantity</b></label>
 		    <input type="text" placeholder="enter the quantity" name="quantity" required>
+		    
+		    <label><b>RAM</b></label>
+		    <input type="text" placeholder="enter the RAM capacity" name="ram" required>
+		    
+		    <label><b>Battery</b></label>
+		    <input type="text" placeholder="enter the battery capacity" name="battery" required>
+		    
+		    <label><b>Camera</b></label>
+		    <input type="text" placeholder="enter the Camera capacity" name="camera" required>
+		    
+		    <label><b>Internal Storage</b></label>
+		    <input type="text" placeholder="enter the Storage capacity" name="internalstorage" required>
+		    
+		    <label><b> Video URL </b></label>
+		    <input type="text" placeholder="enter the video URL" name="videourl" optional>
 		
 		    <div class="clearfix">
-		      <a href="http://localhost:8080/SampleFE/"> <button type="button" class="cancelbtn">Cancel</button> </a>
+		      <a href="http://localhost:8080/SampleFE/afterlogin"> <button type="button" class="cancelbtn">Cancel</button> </a>
 		      <button type="submit" class="signupbtn">Submit</button>
 		    </div>
 		  </div>

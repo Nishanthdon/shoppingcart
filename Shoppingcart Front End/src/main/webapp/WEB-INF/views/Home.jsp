@@ -19,11 +19,14 @@
 <title>Mobile Shop</title>
 
 
-<!-- Start WOWSlider.com HEAD section -->
-<link rel="stylesheet" type="text/css" href="resources/engine1/style.css" />
-<script type="text/javascript" src="resources/engine1/jquery.js"></script>
-<!-- End WOWSlider.com HEAD section -->
+<!-- 
+<link href='https://fonts.googleapis.com/css?family=Kelly Slab' rel='stylesheet'>
+<style>
 
+sub,.title{
+	font-family: 'Kelly Slab';
+}
+</style> -->
 
 
 <style>
@@ -46,34 +49,14 @@ height:50px;
 }
 
 
-
-
-.foot1{
-    background-color: #56a0d3;
-    height: 240px;
-}
-
-.foot2{
-	background-color: #16214d;
-	height: 130px;
-}
-
-.foot3{
-	background-color:black;
-	height: 30px;
-}
-
 .explore_btn {
     padding: 10px 12px;
-    background-color: #56a0d3;
+    background-color: #56b881;
     float: left;
     width: 35%;
     border-radius: 30px;
 }
 
-.explore_btn:hover {
-    opacity: 0.7;
-}
 .rbut{
 	float: right;
 }
@@ -82,6 +65,50 @@ height:50px;
 	background-color: #d7d7d8;
 }
 
+.eff1{
+	-webkit-transition: width 1s !important;
+    transition: width 400ms !important;
+}
+.eff1:HOVER {
+	width: 300px !important;
+}
+
+
+/* Image hover effect */
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.img:hover .image {
+  opacity: 0.3;
+}
+
+.img:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
 
 
 
@@ -93,68 +120,38 @@ height:50px;
 <body >
 
 <jsp:include page="Head.jsp"></jsp:include>
+<br><br><br><br><br><br>
 
 
-
-
-
-<c:if test="${isUserClickedLogin=='true'}">
+<c:choose>
+<c:when test="${isUserClickedLogin=='true'}">
 		<jsp:include page="Login.jsp"></jsp:include>
-	</c:if>
+	</c:when>
 
-<c:if test="${isUserClickedRegister=='true' }">
+<c:when test="${isUserClickedRegister=='true' }">
 		<jsp:include page="Register.jsp"></jsp:include>
-	</c:if>
+	</c:when>
+
+<c:when test="${isUserClickedExplore=='true' }">
+		<jsp:include page="Productgrid1.jsp"></jsp:include>
+	</c:when>
 	
+<c:when test="${isUserClickedAbout=='true' }">
+		<jsp:include page="About.jsp"></jsp:include>
+	</c:when>
+
+
+<c:otherwise>
 
 		
 
-
-
-
-<div class="col-lg-12 pn" style= "z-index:-1; background-image: url('resources/images/Woodenback2.jpg');">  </div>
-
-
-<div class="col-lg-12 " style="z-index:-1; background-image: url('resources/images/Woodenback2.jpg');" >
-<div class="row pb">
-
-<!-- Start WOWSlider.com BODY section -->
-<div id="wowslider-container1">
-<div class="ws_images"><ul>
-        <li><img src="resources/images/Sony Mobile.png" alt="Xperia XZ" title="Xperia XZ" id="wows1_0"/></li>
-		<li><img src="resources/data1/images/galaxy_j5__j7.jpg" alt="Galaxy J5 & J7" title="Galaxy J5 & J7" id="wows1_0"/></li>
-		<li><img src="resources/data1/images/galaxy_s7.jpg" alt="Galaxy S7" title="Galaxy S7" id="wows1_1"/></li>
-		<li><img src="resources/data1/images/galaxy_s8+.jpg" alt="Galaxy S8+" title="Galaxy S8+" id="wows1_2"/></li>
-		<li><img src="resources/data1/images/moto_g4_plus.jpg" alt="Moto G4 plus" title="Moto G4 plus" id="wows1_3"/></li>
-		<li><img src="resources/data1/images/moto_z_play.jpg" alt="Moto Z play" title="Moto Z play" id="wows1_4"/></li>
-		<li><img src="resources/data1/images/moto_z_style.jpg" alt="Moto Z style" title="Moto Z style" id="wows1_5"/></li>
-		<li><img src="resources/data1/images/sony_xperia_water_proof.jpg" alt="Sony Xperia Water Proof" title="Sony Xperia Water Proof" id="wows1_6"/></li>
-		<li><img src="resources/data1/images/sony_xperia.jpg" alt="Sony Xperia" title="Sony Xperia" id="wows1_7"/></li>
-		<li><img src="resources/data1/images/xperia_water_proof.jpg" alt="Xperia water Proof" title="Xperia water Proof" id="wows1_9"/></li>
-	</ul></div>
-	<div class="ws_bullets"><div>
-		<a href="#" title="Galaxy J5 & J7"><span><img src="resources/data1/tooltips/galaxy_j5__j7.jpg" alt="Galaxy J5 & J7"/>1</span></a>
-		<a href="#" title="Galaxy S7"><span><img src="resources/data1/tooltips/galaxy_s7.jpg" alt="Galaxy S7"/>2</span></a>
-		<a href="#" title="Galaxy S8+"><span><img src="resources/data1/tooltips/galaxy_s8+.jpg" alt="Galaxy S8+"/>3</span></a>
-		<a href="#" title="Moto G4 plus"><span><img src="resources/data1/tooltips/moto_g4_plus.jpg" alt="Moto G4 plus"/>4</span></a>
-		<a href="#" title="Moto Z play"><span><img src="resources/data1/tooltips/moto_z_play.jpg" alt="Moto Z play"/>5</span></a>
-		<a href="#" title="Moto Z style"><span><img src="resources/data1/tooltips/moto_z_style.jpg" alt="Moto Z style"/>6</span></a>
-		<a href="#" title="Sony Xperia Water Proof"><span><img src="resources/data1/tooltips/sony_xperia_water_proof.jpg" alt="Sony Xperia Water Proof"/>7</span></a>
-		<a href="#" title="Sony Xperia"><span><img src="resources/data1/tooltips/sony_xperia.jpg" alt="Sony Xperia"/>8</span></a>
-		<a href="#" title="Xperia water Proof"><span><img src="resources/data1/tooltips/xperia_water_proof.jpg" alt="Xperia water Proof"/>10</span></a>
-	</div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.com/vi">cssslider</a> by WOWSlider.com v8.7</div>
-<div class="ws_shadow"></div>
-</div>	
-<script type="text/javascript" src="resources/engine1/wowslider.js"></script>
-<script type="text/javascript" src="resources/engine1/script.js"></script>
-<!-- End WOWSlider.com BODY section -->
-
-</div>
+<div class="col-lg-12">
+	<jsp:include page="Slideshow.jsp"></jsp:include>
 </div>
 
 
-
-
+</c:otherwise>
+</c:choose>
 
 
 <div class="col-lg-12 ">
@@ -171,20 +168,20 @@ height:50px;
 
 <div class="col-lg-1"> </div>
 <div class="col-lg-5 pc">
-	<h1 style="font-size: 55px; font-family: fantasy;">  <b>Galaxy </b> </h1>
+	<h1 style="font-size: 55px;">  <b class="title">Galaxy <sub style="font-size: 16px;">SAMSUNG</sub> </b> </h1>
 	<p style=" font-size: 20px;">The revolutionary design of the Galaxy S8 and S8+ begins from the inside out. We rethought every part of the phone's layout to break through the confines of the smartphone screen. So all you see is pure content and no bezel. It's the biggest, most immersive screen on a Galaxy smartphone of this size. And it's easy to hold in one hand.</p>
 	
 	<div class="col-lg-12 pnn " style="">  </div>
-	<a href="#"><button type="button" class="explore_btn lbut" style="color: black;">Explore</button></a>
-	
-	
-
+	<a href="categories?categoryName=Samsung"><button type="button" class="explore_btn lbut eff1" style="color: black;">Explore</button></a>
 </div>
 
-<div class="col-lg-6 pc">
+<div class="col-lg-6 pc img">
 <div class="row">
 
-<img src="resources/images/Samsung Home.png" style="height:560px;width:600px;">
+	<img class="image" src="resources/images/Samsung Home.png" style="height:560px;width:600px;">
+	<div class="middle">
+    	<a href="categories?categoryName=Samsung"> <div class="text">Galaxy S8</div> </a>
+    </div>
 
 </div>
 </div>
@@ -206,21 +203,24 @@ height:50px;
 <div class="row">
 
 
-<div class="col-lg-6 pc">
+<div class="col-lg-6 pc img">
 <div class="row">
 
-<img src="resources/images/Sony Home.png" style="height:560px;width:600px;">
+	<img class="image" src="resources/images/Sony Home.png" style="height:560px;width:600px;">
+	<div class="middle">
+    	<a href="categories?categoryName=Sony"> <div class="text">Xperia XZ</div> </a>
+    </div>
 
 </div>
 </div>
 
 
 <div class="col-lg-5 pc">
-	<h1 style="font-size: 55px; font-family: fantasy; text-align: right;">  <b>Xperia </b> </h1>
+	<h1 style="font-size: 55px; text-align: right;">  <b>Xperia <sub style="font-size: 16px;">SONY</sub> </b> </h1>
 	<p style=" font-size: 20px;text-align: right; ">The revolutionary design of the Xperia Z5 and Z5 Premium begins from the inside out. We rethought every part of the phone's layout to break through the confines of the smartphone screen. So all you see is pure content and no bezel. It's the biggest, most immersive screen on a Xperia smartphone of this size. And it's easy to hold in one hand.</p>
 	
 	<div class="col-lg-12 pnn " style="">  </div>
-	<a href="#"><button type="button" class="explore_btn rbut" style="color: black;">Explore</button></a>
+	<a href="categories?categoryName=Sony"><button type="button" class="explore_btn rbut eff1" style="color: black;">Explore</button></a>
 
 </div>
 
@@ -242,20 +242,23 @@ height:50px;
 
 <div class="col-lg-1"> </div>
 <div class="col-lg-5 pc">
-	<h1 style="font-size: 55px; font-family: fantasy;">  <b> Z Play </b> </h1>
-	<p style=" font-size: 20px;">The revolutionary design of the Z Play & Z Style begins from the inside out. We rethought every part of the phone's layout to break through the confines of the smartphone screen. So all you see is pure content and no bezel. It's the biggest, most immersive screen on a Moto smartphone of this size. And it's easy to hold in one hand.</p>
+	<h1 style="font-size: 55px">  <b> Z Play <sub style="font-size: 16px;">MOTOROLA</sub> </b> </h1>
+	<p style=" font-size: 20px;">The revolutionary design of the Z Play & Z Style begins from the inside out. We are thought every part of the phone's layout to break through the confines of the smartphone screen. So all you see is pure content and no bezel. It's the biggest, most immersive screen on a Moto smartphone of this size. And it's easy to hold in one hand.</p>
 	
 	<div class="col-lg-12 pnn " style="">  </div>
-	<a href="#"><button type="button" class="explore_btn" style="color: black;">Explore</button></a>
+	<a href="categories?categoryName=Motorola"> <button type="button" class="explore_btn eff1" style="color: black;">Explore</button></a>
 	
 	
 
 </div>
 
-<div class="col-lg-6 pc">
+<div class="col-lg-6 pc img">
 <div class="row">
 
-<img src="resources/images/Motorola Home.png" style="height:560px;width:600px;">
+	<img class="image" src="resources/images/Motorola Home.png" style="height:560px;width:600px;">
+	<div class="middle">
+    	<a href="categories?categoryName=Motorola"> <div class="text">Moto Z Play</div> </a>
+    </div>
 
 </div>
 </div>
@@ -277,21 +280,24 @@ height:50px;
 <div class="row">
 
 
-<div class="col-lg-6 pc">
+<div class="col-lg-6 pc img">
 <div class="row">
 
-<img src="resources/images/Vivo Home.jpg" style="height:560px;width:600px;">
+	<img class="image" src="resources/images/Vivo Home.jpg" style="height:560px;width:600px;">
+	<div class="middle">
+    	<a href="categories?categoryName=Vivo"> <div class="text">Vivo V5</div> </a>
+    </div>
 
 </div>
 </div>
 
 
 <div class="col-lg-5 pc">
-	<h1 style="font-size: 55px; font-family: fantasy; text-align: right;">  <b>Vivo V5 </b> </h1>
+	<h1 style="font-size: 55px; text-align: right;">  <b>Vivo V5 <sub style="font-size: 16px;">VIVO</sub> </b> </h1>
 	<p style=" font-size: 20px;">The revolutionary design of the Vivo V5 begins from the inside out. We rethought every part of the phone's layout to break through the confines of the smartphone screen. So all you see is pure content and no bezel. It's the biggest, most immersive screen on a Vivo smartphone of this size. And it's easy to hold in one hand.</p>
 	
 	<div class="col-lg-12 pnn " style="">  </div>
-	<a href="#"><button type="button" class="explore_btn rbut" style="color: black;">Explore</button></a>
+	<a href="categories?categoryName=Vivo"> <button type="button" class="explore_btn rbut eff1" style="color: black;">Explore</button></a>
 
 </div>
 
@@ -300,87 +306,12 @@ height:50px;
 </div>
 
 
+<div class="col-lg-12 pn " style="">  </div>	
+
+
 <div class="col-lg-12 pn " style="">  </div>
 
-
-
-
-
-
-
-
-
-
-
-<footer class="col-lg-12 foot1">
-	<div class="row">
-	<div class="col-lg-12 pn"></div>
-		<div class="col-lg-3"></div>
-		<div class="col-lg-6">
-			<center><h1 style="color: white; text-align: center;"> <u>ABOUT</u> </h1></center>
-			<div class="col-lg-12">
-				<div class="col-lg-6"> 
-					<p style="color:white; font-size: 14px;">This is an Mobile Website, where you can see and buy your smart phones.you can find your best mobile and buy it. </p>
-				</div>
-				<div class="col-lg-6">
-					<p style="color:white; font-size: 14px;"> From our website, you can compare two phones and buy your best choice. This website is more confortable to see the mobiles and choose what you want. </p>
-				</div>
-			</div>
-		</div>
-		<div class="col-lg-3"></div>
-	</div>
-</footer>
-
-<footer class="col-lg-12 foot2">
-	<div class="row">
-	<div class="col-lg-12 pn"></div>
-		<div class="col-lg-2"></div>
-		<div class="col-lg-2">
-			<h5 style="color:white; text-align: center;">LOCATION</h5>
-			<div class="col-lg-12 pn"></div>
-				<p style="color:white; text-align: center; font-size: 10px;">Peelamedu,Coimbatore</p>
-		</div>
-		<div class="col-lg-4">
-			<h5 style="color:white; text-align: center;">AROUND THE WEB</h5>
-			<div class="col-lg-12 pn"></div>
-			
-				<div class="col-lg-2"></div>
-				<div class="col-lg-2">
-					<img src="resources/images/Google  footer.png" style="width: 30px;height: 40px;">
-				</div>
-				<div class="col-lg-2">
-					<img src="resources/images/Facebook foot.png" style="width: 30px;height: 40px;">
-				</div>
-				<div class="col-lg-2">
-					<img src="resources/images/Twitter foot.png" style="width: 30px;height: 40px;">
-				</div>
-				<div class="col-lg-2">
-					<img src="resources/images/Youtube foot.png" style="width: 40px;height: 50px;">
-				</div>
-				<div class="col-lg-2 "></div>
-			
-		</div>
-		<div class="col-lg-2">
-			<h5 style="color:white; text-align: center;">TERMS & CONDITIONS</h5>
-			<div class="col-lg-12 pn"></div>
-				<p style="color:white; text-align: center; font-size: 10px;">All our products are good and that are in good quality</p>
-		</div>
-		<div class="col-lg-2"></div>
-	
-	</div>
-</footer>
-
-<footer class="col-lg-12 foot3">
-	<p style="text-align: center; font-size: 8px; color: white;"> copyrights @ nishanthdon </p>
-</footer>
-
-
-
-
-
-
-	
-
+<jsp:include page="Footer.jsp"></jsp:include>
 
 
 </body>

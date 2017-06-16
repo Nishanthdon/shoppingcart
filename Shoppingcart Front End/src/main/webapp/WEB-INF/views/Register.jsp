@@ -19,40 +19,6 @@
 
 
 
-.pa{
-height:60px;
-}
-.pb{
-height:450px;
-}
-.pc{
-height:350px;
-}
-.pn{
-height:20px;
-}
-
-
-
-
-
-.foot1{
-    background-color: #56a0d3;
-    height: 240px;
-}
-
-.foot2{
-	background-color: #16214d;
-	height: 130px;
-}
-
-.foot3{
-	background-color:black;
-	height: 30px;
-}
-
-
-
 
 
 /* Full-width input fields */
@@ -107,6 +73,15 @@ button {
     }
 }
 
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 5px 0;
+}
+
+img.avatar {
+    width: 35%;
+    
+}
 
 
 
@@ -119,42 +94,43 @@ button {
 </head>
 <body>
 
+<br>
 
 
-
-
-<div class="col-lg-12 pn" style="z-index: -1"> </div>
-
-
-<div class="col-lg-12" style="z-index: -1">
-	<div class="col-lg-2"></div>
-	<div class="col-lg-8">
+<div class="col-lg-12" style="z-index: -1; background-image: url('resources/images/Registerback.jpg'); background-size: cover; ">
+	<div class="col-lg-3"></div>
+	<div class="col-lg-6">
+	
+		<div class="imgcontainer">
+        	<img src="resources/images/Registerimg.gif" alt="Avatar" class="avatar">
+  		</div>
 		<h2 style="color: green">Signup</h2>
 		
-		<form action="newCustomer" method="post" style="border:3px solid #ccc">
+		<form action="newCustomer" name="myForm" onsubmit="return validation()" method="post" style="border:3px solid #ccc">
 		  <div class="container">
 		  
 		  	
 		  	<label><b>Name</b></label>
-		  	<input type="text" placeholder="Enter your name" name="name" required>
+		  	<input type="text" placeholder="Enter your name" name="name" id="name">
 
 		
 		    <label><b>Password</b></label>
-		    <input type="password" placeholder="Enter Password" name="password" required>
-		    
-		    <!-- <label><b>Repeat Password</b></label>
-		    <input type="password" placeholder="Repeat Password" name="password-repeat" required> -->
+		    <input type="password" placeholder="Enter Password" name="password" id="password">
 		    
 		    <label><b>Contact</b></label>
-		  	<input type="text" placeholder="Enter your contact" name="contact" required>
+		  	<input type="text" placeholder="Enter your contact" name="contact" id="contact">
 		    
-		
 		    <label><b>Email</b></label>
-		    <input type="text" placeholder="Enter Email" name="email" required>
+		    <input type="text" placeholder="Enter Email" name="email" id="email">
+		    
+		    <label><b>Address</b></label>
+		    <input type="text" placeholder="Enter the address" name="address" id="address">
+		    
+		    <label><b>Zipcode</b></label>
+		    <input type="text" placeholder="Enter the zipcode" name="zipcode" id="zipcode">
 		    
 		    
-		    <input type="checkbox" checked="checked"> Remember me
-		    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+		    <p> Already have an Account ? <a href="http://localhost:8080/SampleFE/LoginPage"> Sign In </a></p>
 		
 		    <div class="clearfix">
 		      <a href="http://localhost:8080/SampleFE/"> <button type="button" class="cancelbtn">Cancel</button> </a>
@@ -163,13 +139,16 @@ button {
 		  </div>
 		</form>
 	</div>
-	<div class="col-lg-2"></div>
+	<div class="col-lg-3"></div>
 
 </div>
 
 
-<div class="col-lg-12 pa"></div>
+<div class="col-lg-12 pn"></div>
 
+
+
+<script type="text/javascript" src="resources/js/registervalidation.js"></script>
 
 
 

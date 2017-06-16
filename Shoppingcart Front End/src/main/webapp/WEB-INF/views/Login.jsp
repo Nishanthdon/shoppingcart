@@ -20,29 +20,8 @@
 
 
 
-
-.pa{
-height:60px;
-}
-.pb{
-height:450px;
-}
-.pc{
-height:350px;
-}
-.pn{
-height:20px;
-}
-
-
-
-
-
-
-
-
 .login_win{
-	padding: 100px 450px;
+	padding: 40px 450px;
 }
 
 
@@ -77,12 +56,11 @@ button:hover {
 
 .imgcontainer {
     text-align: center;
-    margin: 24px 0 5px 0;
 }
 
 img.avatar {
     width: 40%;
-    border-radius: 50%;
+   
 }
 
 .container {
@@ -105,21 +83,6 @@ span.psw {
     }
 }
 
-.foot1{
-    background-color: #56a0d3;
-    height: 240px;
-}
-
-.foot2{
-	background-color: #16214d;
-	height: 130px;
-}
-
-.foot3{
-	background-color:black;
-	height: 30px;
-}
-
 
 
 
@@ -128,14 +91,10 @@ span.psw {
 </head>
 <body>
 
-
-
-
-<div class="col-lg-12 pn" style="z-index: -1"></div>
-
+<div class="" style=" background-image: url('resources/images/Loginback.jpg'); background-size: cover;">
 <form action="signIn" method="post" class="login_win" style="z-index:-1;">
   <div class="imgcontainer">
-    <img src="resources/images/img avatar.png" alt="Avatar" class="avatar">
+    <img src="resources/images/Loginuser.png" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">
@@ -146,25 +105,18 @@ span.psw {
     <input type="password" placeholder="Enter Password" name="password" required>
         
     <button type="submit">Login</button>
-    <input type="checkbox" checked="checked"> Remember me
+    
   </div>
 
-  <div class="container" style="background-color:#f1f1f1">
-    <a href="http://localhost:8080/SampleFE/"> <button type="button" class="cancelbtn">Cancel</button> </a>
-    <span class="psw">Forgot <a href="#">password?</a></span>
+  <div class="container" style="background-color:#d7d7d8">
+    <a href="http://localhost:8080/SampleFE/"> <button type="button" class="cancelbtn ">Cancel</button> </a>
+    <span class="psw">New User ? <a href="http://localhost:8080/SampleFE/RegistrationPage">Register first</a></span>
   </div>
 </form>
-
+</div>
 
 
 <div class="col-lg-12 pn"> </div>
-
-
-
-
-
-
-
 
 
 

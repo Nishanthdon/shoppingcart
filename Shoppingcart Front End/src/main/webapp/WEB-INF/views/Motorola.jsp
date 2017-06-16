@@ -157,71 +157,7 @@ height:20px;
 
 
 
-
-
-
-<footer class="col-lg-12 foot1">
-	<div class="row">
-	<div class="col-lg-12 pn"></div>
-		<div class="col-lg-3"></div>
-		<div class="col-lg-6">
-			<center><h1 style="color: white; text-align: center;"> <u>ABOUT</u> </h1></center>
-			<div class="col-lg-12">
-				<div class="col-lg-6"> 
-					<p style="color:white; font-size: 14px;">This is an Mobile Website, where you can see and buy your smart phones.you can find your best mobile and buy it. </p>
-				</div>
-				<div class="col-lg-6">
-					<p style="color:white; font-size: 14px;"> From our website, you can compare two phones and buy your best choice. This website is more confortable to see the mobiles and choose what you want. </p>
-				</div>
-			</div>
-		</div>
-		<div class="col-lg-3"></div>
-	</div>
-</footer>
-
-<footer class="col-lg-12 foot2">
-	<div class="row">
-	<div class="col-lg-12 pn"></div>
-		<div class="col-lg-2"></div>
-		<div class="col-lg-2">
-			<h5 style="color:white; text-align: center;">LOCATION</h5>
-			<div class="col-lg-12 pn"></div>
-				<p style="color:white; text-align: center; font-size: 10px;">Peelamedu,Coimbatore</p>
-		</div>
-		<div class="col-lg-4">
-			<h5 style="color:white; text-align: center;">AROUND THE WEB</h5>
-			<div class="col-lg-12 pn"></div>
-			
-				<div class="col-lg-2"></div>
-				<div class="col-lg-2">
-					<img src="resources/images/Google  footer.png" style="width: 30px;height: 40px;">
-				</div>
-				<div class="col-lg-2">
-					<img src="resources/images/Facebook foot.png" style="width: 30px;height: 40px;">
-				</div>
-				<div class="col-lg-2">
-					<img src="resources/images/Twitter foot.png" style="width: 30px;height: 40px;">
-				</div>
-				<div class="col-lg-2">
-					<img src="resources/images/Youtube foot.png" style="width: 40px;height: 50px;">
-				</div>
-				<div class="col-lg-2 "></div>
-			
-		</div>
-		<div class="col-lg-2">
-			<h5 style="color:white; text-align: center;">TERMS & CONDITIONS</h5>
-			<div class="col-lg-12 pn"></div>
-				<p style="color:white; text-align: center; font-size: 10px;">All our products are good and that are in good quality</p>
-		</div>
-		<div class="col-lg-2"></div>
-	
-	</div>
-</footer>
-
-<footer class="col-lg-12 foot3">
-	<p style="text-align: center; font-size: 8px; color: white;"> copyrights @ nishanthdon </p>
-</footer>
-
+<jsp:include page="Footer.jsp"></jsp:include>
 
 
 
