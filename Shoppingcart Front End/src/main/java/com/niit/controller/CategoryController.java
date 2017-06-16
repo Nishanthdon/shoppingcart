@@ -61,9 +61,9 @@ public class CategoryController {
 	
 
 @RequestMapping("editCategory")
-	public String editCategory(@RequestParam(value = "categoryId") String id, Model model) {
+	public String editCategory(@RequestParam(value = "categoryId") String categoryid, Model model) {
 
-		Category category = categoryDAO.get(id);
+		Category category = categoryDAO.get(categoryid);
 		model.addAttribute("category", category);
 		model.addAttribute("isUserClickedEdit", "true");
 		return "adminLogin";
@@ -84,4 +84,7 @@ public class CategoryController {
 	public void adminCategory(Model model) {
 		model.addAttribute("isAdmin", "true");
 	}
+	
+	
+	
 }

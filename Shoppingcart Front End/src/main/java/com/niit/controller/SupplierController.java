@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.niit.shoppingcart.dao.SupplierDAO;
-import com.niit.shoppingcart.domain.Category;
 import com.niit.shoppingcart.domain.Supplier;
 
 @Controller
@@ -21,9 +20,9 @@ public class SupplierController {
 	
 	@RequestMapping("newSupplier")
 	public String submit(@ModelAttribute Supplier supplier){
-		boolean flag = supplierDAO.save(supplier);
+		boolean flag = supplierDAO.saveOrUpdate(supplier);
 		System.out.println(flag);
-		return "Supplier";
+		return "redirect:/viewsupplierPage";
 	}
 	
 	
@@ -45,6 +44,26 @@ public class SupplierController {
 		return "redirect:/viewsupplierPage";
 
 	}
+	
+
+@RequestMapping("editSupplier")
+	public String editSupplier(@RequestParam(value = "supplierId") String supplierid, Model model) {
+
+		Supplier supplier = supplierDAO.get(supplierid);
+		model.addAttribute("supplier", supplier);
+		model.addAttribute("isUserClickedEdit1", "true");
+		return "adminLogin";
+
+	}
+
+@RequestMapping("afterEditSupplier")
+	public String afterEditSupplier(@ModelAttribute Supplier supplier, Model model){
+		supplierDAO.saveOrUpdate(supplier);
+		
+		return "redirect:/viewsupplierPage";
+		
+	}
+
 
 	
 	@RequestMapping("/viewsupplierPage")
