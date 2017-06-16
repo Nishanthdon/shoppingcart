@@ -32,6 +32,10 @@ public class User {
 	
 	private String email;
 	
+	private String address;
+	
+	private int zipcode;
+	
 	private boolean enabled;
 
 	@OneToOne(cascade=CascadeType.ALL)
@@ -39,13 +43,6 @@ public class User {
 	
 	private Role role;
 	
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
 	
 	public Role getRole() {
 		return role;
@@ -58,6 +55,16 @@ public class User {
 	
 
 	
+	
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	public boolean isEnabled() {
 		return enabled;
 	}
@@ -100,6 +107,22 @@ public class User {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public int getZipcode() {
+		return zipcode;
+	}
+
+	public void setZipcode(int zipcode) {
+		this.zipcode = zipcode;
 	}
 
 	

@@ -15,27 +15,27 @@ import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.shoppingcart.domain.Billing;
+import com.niit.shoppingcart.domain.Cart;
 import com.niit.shoppingcart.domain.Category;
-import com.niit.shoppingcart.domain.Mycart;
 import com.niit.shoppingcart.domain.Product;
 import com.niit.shoppingcart.domain.Role;
-import com.niit.shoppingcart.domain.Shipping;
+import com.niit.shoppingcart.domain.Shippingaddress;
 import com.niit.shoppingcart.domain.Supplier;
 import com.niit.shoppingcart.domain.User;
 import com.niit.shoppingcart.dao.BillingDAO;
+import com.niit.shoppingcart.dao.CartDAO;
 import com.niit.shoppingcart.dao.CategoryDAO;
-import com.niit.shoppingcart.dao.MycartDAO;
 import com.niit.shoppingcart.dao.ProductDAO;
 import com.niit.shoppingcart.dao.RoleDAO;
-import com.niit.shoppingcart.dao.ShippingDAO;
+import com.niit.shoppingcart.dao.ShippingaddressDAO;
 import com.niit.shoppingcart.dao.SupplierDAO;
 import com.niit.shoppingcart.dao.UserDAO;
 import com.niit.shoppingcart.daoimpl.BillingDAOImpl;
+import com.niit.shoppingcart.daoimpl.CartDAOImpl;
 import com.niit.shoppingcart.daoimpl.CategoryDAOImpl;
-import com.niit.shoppingcart.daoimpl.MycartDAOImpl;
 import com.niit.shoppingcart.daoimpl.ProductDAOImpl;
 import com.niit.shoppingcart.daoimpl.RoleDAOImpl;
-import com.niit.shoppingcart.daoimpl.ShippingDAOImpl;
+import com.niit.shoppingcart.daoimpl.ShippingaddressDAOImpl;
 import com.niit.shoppingcart.daoimpl.SupplierDAOImpl;
 import com.niit.shoppingcart.daoimpl.UserDAOImpl;
 @Configuration
@@ -79,9 +79,9 @@ public class ApplicationContextConfig {
 		sessionBuilder.addAnnotatedClass(Category.class);
 		sessionBuilder.addAnnotatedClass(Product.class);
 		sessionBuilder.addAnnotatedClass(Billing.class);
-		sessionBuilder.addAnnotatedClass(Mycart.class);
+		sessionBuilder.addAnnotatedClass(Cart.class);
 		sessionBuilder.addAnnotatedClass(Role.class);
-		sessionBuilder.addAnnotatedClass(Shipping.class);
+		sessionBuilder.addAnnotatedClass(Shippingaddress.class);
 		sessionBuilder.addAnnotatedClass(Supplier.class);
 		
 		return sessionBuilder.buildSessionFactory();
@@ -120,11 +120,11 @@ public class ApplicationContextConfig {
 	}
 	
 	@Autowired(required=true)
-	@Bean(name = "mycartDAO")
-	public MycartDAO getmycartDAO(SessionFactory sessionFactory) {
-		return new MycartDAOImpl(sessionFactory);
+	@Bean(name = "cartDAO")
+	public CartDAO getcartDAO(SessionFactory sessionFactory) {
+		return new CartDAOImpl(sessionFactory);
 	}
-	
+
 	@Autowired(required=true)
 	@Bean(name = "roleDAO")
 	public RoleDAO getroleDAO(SessionFactory sessionFactory) {
@@ -132,9 +132,9 @@ public class ApplicationContextConfig {
 	}
 	
 	@Autowired(required=true)
-	@Bean(name = "shippingDAO")
-	public ShippingDAO getshippingDAO(SessionFactory sessionFactory) {
-		return new ShippingDAOImpl(sessionFactory);
+	@Bean(name = "shippingaddressDAO")
+	public ShippingaddressDAO getshippingaddressDAO(SessionFactory sessionFactory) {
+		return new ShippingaddressDAOImpl(sessionFactory);
 	}
 	
 	@Autowired(required=true)

@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.niit.shoppingcart.dao.UserDAO;
+
 import com.niit.shoppingcart.domain.User;
 
 //Note : we will get errors  - will solve tomorrow
@@ -94,19 +95,21 @@ public class UserDAOImpl implements UserDAO {
 		
 	}
 
+
+	public User getByEmailId(String email) {
+		
+		String hql = "from User where email ='"+ email +"'";
+		org.hibernate.Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		@SuppressWarnings("unchecked")
+		List<User> listUser = (List<User>) query.list();
+		
+		if (listUser != null && !listUser.isEmpty()){
+			return listUser.get(0);
+		}
+	return null;
+	
+	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

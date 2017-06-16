@@ -14,7 +14,7 @@ public interface UserDAO {
 	public boolean update(User user);
 	
 	
-	public boolean validate(String id, String password);
+	public boolean validate(String userid, String password);
 	
 	// get all users   - list
 	
@@ -24,20 +24,10 @@ public interface UserDAO {
 	//get user details based on userID
 	
 	public User get(String id);
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+	public User getByEmailId(String email);
 	
 	
 	
 
-}
+ }

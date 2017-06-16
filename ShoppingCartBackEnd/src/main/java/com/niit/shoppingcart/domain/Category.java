@@ -1,5 +1,7 @@
 package com.niit.shoppingcart.domain;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,27 +17,29 @@ public class Category {
 
 	@Id
 	@GeneratedValue
-	private String id;
+	private String categoryid;
 	
-	@Column(name = "name")
-	private String name;
+	
+	private String categoryname;
 	
 	private String description;
 	
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
 	
-	public String getName() {
-		return name;
+	
+	public String getCategoryid() {
+		return categoryid;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setCategoryid(String categoryid) {
+		this.categoryid = categoryid;
+	}
+
+	public String getCategoryname() {
+		return categoryname;
+	}
+
+	public void setCategoryname(String categoryname) {
+		this.categoryname = categoryname;
 	}
 
 	public String getDescription() {
@@ -44,6 +48,11 @@ public class Category {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public List<Category> list() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

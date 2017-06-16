@@ -15,13 +15,13 @@ public class Supplier {
 
 	@Id
 	@GeneratedValue
-	private String id;
+	private String supplierid;
 	
 	@Column(name = "name")
-	private String name;
+	private String suppliername;
 	
 	private String description;
-	
+	  
 	private String contact;
 	
 	private String mail;
@@ -30,20 +30,22 @@ public class Supplier {
 	
 	private String citycode;
 
-	public String getId() {
-		return id;
+	
+
+	public String getSupplierid() {
+		return supplierid;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setSupplierid(String supplierid) {
+		this.supplierid = supplierid;
 	}
 
-	public String getName() {
-		return name;
+	public String getSuppliername() {
+		return suppliername;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setSuppliername(String suppliername) {
+		this.suppliername = suppliername;
 	}
 
 	public String getDescription() {
