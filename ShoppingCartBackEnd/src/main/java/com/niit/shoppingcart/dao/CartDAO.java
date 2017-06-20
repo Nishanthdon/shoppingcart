@@ -28,5 +28,7 @@ public interface CartDAO {
 	public boolean save(Cart cart);
 	
 	public boolean update(Cart cart);
+	
+	public  List<Cart> listCartByStatus(String userID, String status);
 
 }

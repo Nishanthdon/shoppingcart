@@ -75,7 +75,7 @@ public class CartDAOImpl implements CartDAO {
 	@Transactional
 	public Long getTotalAmount(String id) {
 
-		String hql = "select sum(price*quantity) from  Cart where id=" + "'" + id + "' " + "  and status = " + "'N'";
+		String hql = "select sum(price*quantity) from  Cart where email=" + "'" + id + "' " + "  and status = " + "'N'";
 
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 
@@ -214,6 +214,15 @@ public class CartDAOImpl implements CartDAO {
 			return listCart.get(0);
 		}
 		return null;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Transactional
+	public List<Cart> listCartByStatus(String userID, String status) {
+	
+		return sessionFactory.getCurrentSession()
+				.createQuery("from Cart where email=" + "'" + userID + "'" + "and status=" + "'" + status+"'")
+				.list();
 	}
 
 }
