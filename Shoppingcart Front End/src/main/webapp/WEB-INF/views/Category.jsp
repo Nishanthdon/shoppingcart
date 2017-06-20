@@ -92,16 +92,16 @@ button {
 	<div class="col-lg-8">
 		
 		
-		<form action="newCategory" method="post" style="border:3px solid #56b881">
+		<form action="newCategory" method="post" style="border:3px solid #56b881" onsubmit="return categoryvalidation()">
 		  <div class="container">
 		  
 		  	
 		  	<label><b>Name</b></label>
-		  	<input type="text" placeholder="Name of the product" name="categoryname" required>
+		  	<input type="text" placeholder="Name of the product" name="categoryname" id="categoryname">
 
 		
 		    <label><b>Description</b></label>
-		    <input type="text" placeholder="description" name="description" required>
+		    <input type="text" placeholder="description" name="description" id="description">
 		    
 		
 		    <div class="clearfix">
@@ -117,6 +117,7 @@ button {
 
 
 
+<script type="text/javascript" src="resources/js/categoryvalidation.js"></script>
 
 
 

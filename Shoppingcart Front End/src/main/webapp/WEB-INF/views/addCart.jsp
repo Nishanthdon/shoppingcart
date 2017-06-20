@@ -24,46 +24,23 @@ tr.tot td{
 	padding: 10px;
 }
 
+.bt11{
+	background-color: #fcb314; 
+	color: white;
+	 border-radius: 10px; 
+	 height: 35px;
+	 width: 200px;
+
+}
+
+.bt11:HOVER {
+	background-color: #85c446;
+}
 
 </style>
 
 
-<!-- <style>
 
-.table>tbody>tr>td, .table>tfoot>tr>td{
-    vertical-align: middle;
-}
-@media screen and (max-width: 600px) {
-    table#cart tbody td .form-control{
-		width:20%;
-		display: inline !important;
-	}
-	.actions .btn{
-		width:36%;
-		margin:1.5em 0;
-	}
-	
-	.actions .btn-info{
-		float:left;
-	}
-	.actions .btn-danger{
-		float:right;
-	}
-	
-	table#cart thead { display: none; }
-	table#cart tbody td { display: block; padding: .6rem; min-width:320px;}
-	table#cart tbody tr td:first-child { background: #333; color: #fff; }
-	table#cart tbody td:before {
-		content: attr(data-th); font-weight: bold;
-		display: inline-block; width: 8rem;
-	}
-	
-	
-	
-	table#cart tfoot td{display:block; }
-	table#cart tfoot td .btn{display:block;}
-	
-}
 
 </style> -->
 
@@ -71,11 +48,8 @@ tr.tot td{
 </head>
 <body>
 
-<br><br>
+<br><br><br>
 
-
-<h2 style="text-align: center;">Welcome ${user.id} </h2>
-<br>
 
 <h3 style="color: red"> Your Cart : </h3>
 
@@ -98,18 +72,18 @@ tr.tot td{
 				<th align="left">Price</th>
 				<th align="left">Quantity</th>
 				<th align="left">Total</th>
-				<th align="left">Days</th>
+				<th align="left">Days to Deliver</th>
 				<th align="left">Remove</th>
 
 </tr>
 <c:forEach items="${cartList}" var="cart" varStatus="status">
 				<tr>
 					<td>${status.count}</td>
-					<td></td>
+					<td><img src="resources/images/Products/${cart.productid}.jpg" style="height: 100px; width: 80px"></td>
 					<td>${cart.productname}</td>
-					<td>${cart.price}</td>
+					<td>Rs:${cart.price}</td>
 					<td>${cart.quantity}</td>
-					<td>${cart.total}</td>
+					<td>Rs:${cart.total}</td>
 					<td>${cart.days}</td>
 					<td><a href="removeCart?cartId=${cart.cartId}"> <button style="background-color: red; color: white; border-radius:10px;"> Remove</button></a></td>
 				</tr>
@@ -118,7 +92,7 @@ tr.tot td{
 
 		<tr class="tot">
 				<td colspan="5" style="text-align: right;">Grand Total :</td>
-				<td colspan="2">${GrandTotal}</td>
+				<td colspan="2">Rs:${GrandTotal}</td>
 				<td></td>
 			</tr> 
 			
@@ -127,8 +101,13 @@ tr.tot td{
 		
 		<br>
 		<div style="text-align: center;">
-			<a href="proceed"><button style="background-color: #fcb314; color: white; border-radius: 10px; height: 35px; width: 200px">Proceed</button></a>
-			<a href="http://localhost:8080/SampleFE/afterlogin"><button style="background-color: #fcb314; color: white; border-radius: 10px; height: 35px; width: 200px"> Continue Shopping </button></a>
+			<c:if test="${isCartEmpty=='true' }">
+				No Items
+			</c:if>
+			<c:if test="${isCartEmpty=='false' }">
+			<a href="proceed"><button class="bt11">Proceed</button></a>
+			</c:if>
+			<a href="http://localhost:8080/SampleFE/afterlogin"><button class="bt11"> Continue Shopping </button></a>
 		</div>
 
 

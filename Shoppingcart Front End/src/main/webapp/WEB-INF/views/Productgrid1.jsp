@@ -19,7 +19,8 @@
 
 
 body {
-    background: #f1f1f1;
+    /* background-image: url("resources/images/userback3.jpg"); */
+    background-color: #c0de9e;
 }
 
 .product-item {
@@ -124,7 +125,7 @@ body {
 
   <body>
   
-  <br><br>
+  <br><br><br>
   
 <h3 style="color: red"> Mobiles: </h3>
  

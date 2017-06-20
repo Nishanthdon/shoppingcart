@@ -120,7 +120,8 @@ height:50px;
 <body >
 
 <jsp:include page="Head.jsp"></jsp:include>
-<br><br><br><br><br><br>
+
+<br><br><br><br><br><br><br>
 
 
 <c:choose>

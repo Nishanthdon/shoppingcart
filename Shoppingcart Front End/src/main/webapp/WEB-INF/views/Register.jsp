@@ -84,20 +84,15 @@ img.avatar {
 }
 
 
-
-
-
-
 </style>
 
 
 </head>
 <body>
 
-<br>
 
 
-<div class="col-lg-12" style="z-index: -1; background-image: url('resources/images/Registerback.jpg'); background-size: cover; ">
+<div class="col-lg-12" style="z-index: -1; background-image: url('resources/images/Registerback1.png'); background-size: cover; ">
 	<div class="col-lg-3"></div>
 	<div class="col-lg-6">
 	

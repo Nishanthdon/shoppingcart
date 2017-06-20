@@ -2,9 +2,6 @@
 
  
 <style>
-	.op{
-		opacity: 0.3;
-	}
 	
 	.sn{
 		height: 650px;
@@ -22,7 +19,10 @@
 		background-color: #56b881 !important;
 	}
 	
+	body{
+		background-color: #ced7df;
 	
+	}
 
 </style>
 
@@ -32,7 +32,7 @@
 <body>
 
 
-<div class="col-lg-12 sn"  style="background-image: url('resources/images/Thankyou2.jpg'); background-size: cover; opacity: 0.5">
+<div class="col-lg-12 sn" >
 	<div>
 		<h1 style="padding-top: 80px; text-align: center; color: red;">  ThankYou for your Shopping!  </h1>
 		<div style="text-align: center;"><img style="height: 300px; width: 330px;" src="resources/images/Tick.png"></div>

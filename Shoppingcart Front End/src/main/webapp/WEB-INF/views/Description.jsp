@@ -10,6 +10,9 @@
 
 <style type="text/css">
 
+body {
+    background-image: url("resources/images/userback3.jpg");
+}
 
 body {
   font-family: 'open sans';
@@ -216,13 +219,18 @@ img {
 
 <br><br><br>
 
-<div style="text-align: center">
+
+<%-- 
+<div style="text-align: center; padding-top: 2px; padding-bottom: 1px;" >
 	
 	<a class="image-popup-vertical-fit" href="https://youtube.com/embed/${product.videourl}?autoplay=1">
 		<button class="like btn btn-default"> Watch Official Video </button>
 	</a>
 </div>
-
+ --%>
+ 
+ 
+ 
 
 <div class="col-lg-12 pnn"></div>
 
@@ -239,7 +247,12 @@ img {
 						<div class="preview-pic tab-content">
 						  <div class="tab-pane active" id="pic-1"><img src="resources/images/Products/${product.productid}.jpg" style="height: 430px; width: 330px"></div>
 						</div>
-						 
+						
+						<div style="text-align: center; padding-top: 10px">
+							 <a class="image-popup-vertical-fit" href="https://youtube.com/embed/${product.videourl}?autoplay=1">
+								<button class="like btn btn-default"> Watch Official Video </button>
+							</a>
+						</div>
 					</div>
 					<div class="details col-md-5">
 					  <form>

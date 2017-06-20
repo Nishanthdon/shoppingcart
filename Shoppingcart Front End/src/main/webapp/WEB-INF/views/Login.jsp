@@ -92,17 +92,17 @@ span.psw {
 <body>
 
 <div class="" style=" background-image: url('resources/images/Loginback.jpg'); background-size: cover;">
-<form action="signIn" method="post" class="login_win" style="z-index:-1;">
+<form action="signIn" method="post" class="login_win" style="z-index:-1;" onsubmit="return loginvalidation()">
   <div class="imgcontainer">
     <img src="resources/images/Loginuser.png" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">
-    <label><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="email" required>
+    <label><b>Username or Email</b></label>
+    <input type="text" placeholder="Enter Username" name="email" id="email">
 
     <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required>
+    <input type="password" placeholder="Enter Password" name="password" id="password">
         
     <button type="submit">Login</button>
     
@@ -118,6 +118,10 @@ span.psw {
 
 <div class="col-lg-12 pn"> </div>
 
+
+
+
+<script type="text/javascript" src="resources/js/loginvalidation.js"></script>
 
 
 </body>

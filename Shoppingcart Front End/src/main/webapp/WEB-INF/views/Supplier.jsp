@@ -93,27 +93,27 @@ button {
 	<div class="col-lg-8">
 		
 		
-		<form action="newSupplier" method="post" style="border:3px solid #56b881">
+		<form action="newSupplier" method="post" style="border:3px solid #56b881" onsubmit="return suppliervalidation()">
 		  <div class="container">
 		  
 		  	
 		  	<label><b>Name</b></label>
-		  	<input type="text" placeholder="Name of the product" name="suppliername" required>
+		  	<input type="text" placeholder="Name of the product" name="suppliername" id="suppliername">
 
 		    <label><b>Description</b></label>
-		    <input type="text" placeholder="description" name="description" required>
+		    <input type="text" placeholder="description" name="description" id="description">
 
 		    <label><b>Contact</b></label>
-		    <input type="text" placeholder="enter your number" name="contact" required>
+		    <input type="text" placeholder="enter your number" name="contact" id="contact">
 		    
 		    <label><b>Mail</b></label>
-		    <input type="text" placeholder="enter the mail" name="mail" required>
+		    <input type="text" placeholder="enter the mail" name="mail" id="mail">
 		    
 		    <label><b>Address</b></label>
-		    <input type="text" placeholder="enter the address" name="address" required>
+		    <input type="text" placeholder="enter the address" name="address" id="address">
 		    
 		    <label><b>Citycode</b></label>
-		    <input type="text" placeholder="enter the Citycode" name="citycode" required>
+		    <input type="text" placeholder="enter the Citycode" name="citycode" id="citycode">
 		    
 		
 		    <div class="clearfix">
@@ -130,6 +130,9 @@ button {
 
 <div class="col-lg-12 pa"></div>
 
+
+
+<script type="text/javascript" src="resources/js/suppliervalidation.js"></script>
 
 
 

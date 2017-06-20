@@ -95,17 +95,17 @@ button {
 	<div class="col-lg-8">
 		
 		
-		<form action="newProduct" method="post" enctype="multipart/form-data"  style="border:3px solid #56b881">
+		<form action="newProduct" method="post" enctype="multipart/form-data"  style="border:3px solid #56b881" onsubmit="return productvalidation()">
 		  <div class="container">
 		  
 		  	
 		  	<label><b>Name</b></label>
-		  	<input type="text" placeholder="Name of the product" name="productname" required>
+		  	<input type="text" placeholder="Name of the product" name="productname" id="productname">
 		  	
 		  	<label><b>Brand</b></label>
-		    <input type="text" placeholder="enter the brand" name="brand" required>
+		    <input type="text" placeholder="enter the brand" name="brand" id="brand">
 		    
-		    <select name="category">
+		    <select name="category" id="category">
   			<option value="">Select Category</option>
   			<c:forEach items="${categoryList}" var="category"><br><br>
   				 <option value="${category.categoryname}">${category.categoryname}</option> 
@@ -113,7 +113,7 @@ button {
   			</c:forEach>
 	   </select> 
  <br><br>  
-	  <select name="supplier">
+	  <select name="supplier" id="supplier">
   			<option value="">Select Supplier</option>
   			<c:forEach items="${supplierList}" var="supplier"><br><br>
   				<option value="${supplier.suppliername}">${supplier.suppliername}</option>
@@ -121,7 +121,7 @@ button {
 	  </select>
 		
 		    <label><b>Description</b></label>
-		    <input type="text" placeholder="description" name="description" required>
+		    <input type="text" placeholder="description" name="description" id="description">
 		    
 		    <label><b>Image</b></label>
 		    <input type="file" placeholder="enter the colour" name="image" id="file" required>
@@ -129,27 +129,27 @@ button {
 		    <br>
 		    
 		    <label><b>Price</b></label>
-		    <input type="text" placeholder="enter the price" name="price" required>
+		    <input type="text" placeholder="enter the price" name="price" id="price">
 		    
 		    <label><b>Colour</b></label>
-		    <input type="text" placeholder="enter the colour" name="colour" required>
+		    <input type="text" placeholder="enter the colour" name="colour" id="colour">
 		    
 		    <label><b>quantity</b></label>
-		    <input type="text" placeholder="enter the quantity" name="quantity" required>
+		    <input type="text" placeholder="enter the quantity" name="quantity" id="quantity">
 		    
 		    <label><b>RAM</b></label>
-		    <input type="text" placeholder="enter the RAM capacity" name="ram" required>
+		    <input type="text" placeholder="enter the RAM capacity" name="ram" id="ram">
 		    
 		    <label><b>Battery</b></label>
-		    <input type="text" placeholder="enter the battery capacity" name="battery" required>
+		    <input type="text" placeholder="enter the battery capacity" name="battery" id="battery">
 		    
 		    <label><b>Camera</b></label>
-		    <input type="text" placeholder="enter the Camera capacity" name="camera" required>
+		    <input type="text" placeholder="enter the Camera capacity" name="camera" id="camera">
 		    
 		    <label><b>Internal Storage</b></label>
-		    <input type="text" placeholder="enter the Storage capacity" name="internalstorage" required>
+		    <input type="text" placeholder="enter the Storage capacity" name="internalstorage" id="internalstorage">
 		    
-		    <label><b> Video URL </b></label>
+		    <label><b> Video URL(optional) </b></label>
 		    <input type="text" placeholder="enter the video URL" name="videourl" optional>
 		
 		    <div class="clearfix">
@@ -169,6 +169,7 @@ button {
 
 
 
+<script type="text/javascript" src="resources/js/productvalidation.js"></script>
 
 
 

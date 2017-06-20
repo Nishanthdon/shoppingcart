@@ -126,9 +126,12 @@ color: black !important;
     padding: 0px 20px !important;
 }
 
-.about:hover{
+
+.about:hover
+{
 	color: white !important;
-	font-size: 15px !important;
+	font-size: 20px !important;
+	transform: scale(1.2);
 }
 
 /* .fullnav{
@@ -144,6 +147,25 @@ color: black !important;
  .eff:hover {  
     width: 150px !important;  
 }  
+
+.bt12{
+	display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+
+}
+
+.bt12:hover,
+.bt12:focus,
+.bt12:active {
+    transform: scale(1.2);
+    background-color: #56b881 !important;
+}
 
 
 </style>
@@ -191,7 +213,7 @@ color: black !important;
 
 <div class="menu col-lg-8">
 	
-  <a href="http://localhost:8080/SampleFE/"><button class="bt4 btn btn-default eff" style="float: left;"> <span class="glyphicon glyphicon-home"></span> Home</button></a>
+  <a href="http://localhost:8080/SampleFE/"><button class="bt4 btn btn-default bt12" style="float: left;"> <span class="glyphicon glyphicon-home"></span> Home</button></a>
   
   
   <c:if test="${isUser == 'true' }">
@@ -231,8 +253,13 @@ color: black !important;
   	    </ul>
   </li>
   
-  <li style="text-align:right"><a href="mycart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
-  
+  <c:if test="${pageContext.request.userPrincipal.name!=null }">
+ 	 <li style="text-align:right"><a href="mycart"><button class="btn btn-default bt12" style="width: 120px"><span class="glyphicon glyphicon-shopping-cart"></span> Your Cart </button></a></li>
+  </c:if>
+  <c:if test="${pageContext.request.userPrincipal.name==null }">
+  	<li style="text-align:right"><a href="LoginPage"><button class="btn btn-default bt12" style="width: 120px"><span class="glyphicon glyphicon-shopping-cart"></span> Your Cart </button></a></li>
+  </c:if>
+
 </c:if>
   
   
@@ -266,16 +293,16 @@ color: black !important;
 
   </div>
 <div class="menu col-lg-4">
-	<a href="AboutPage"><li class="about " style="text-align:right; color: #9f9fa3; font-size: 16px">About</li></a>
+	<a href="AboutPage"><li class="about" style="text-align:right; color: #9f9fa3; font-size: 16px">About</li></a>
 
 <c:if test="${pageContext.request.userPrincipal.name== null }">
-	<a href="LoginPage"><button class="bt3 btn btn-default eff" style="float: right;"><span class="glyphicon glyphicon-log-in"></span> Login</button></a>
-    <a href="RegistrationPage"><button class="bt3 btn btn-default eff" style="float: right;"><span class="glyphicon glyphicon-registration-mark"></span> Register</button></a>
+	<a href="LoginPage"><button class="bt3 btn btn-default bt12" style="float: right;"><span class="glyphicon glyphicon-log-in"></span> Login</button></a>
+    <a href="RegistrationPage"><button class="bt3 btn btn-default bt12" style="float: right;"><span class="glyphicon glyphicon-registration-mark"></span> Register</button></a>
 </c:if>
 
 
 <c:if test="${pageContext.request.userPrincipal.name!= null }">
-	<a href="logout"><button class="bt3 eff" style="float: right;"><span class="glyphicon glyphicon-log-out"></span>Logout</button></a>
+	<a href="logout"><button class="bt3 bt12" style="float: right;"><span class="glyphicon glyphicon-log-out"></span>Logout</button></a>
 
   
 </c:if>
