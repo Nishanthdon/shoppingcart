@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -35,6 +36,7 @@ public class CartController {
 		Product product = productDAO.get(productid);
 
 		model.addAttribute("isUserClickedView", true);
+		model.addAttribute("isUser", true);
 		model.addAttribute("product", product);
 		return "userLogin";
 	}
@@ -44,9 +46,19 @@ public class CartController {
 		List<Cart> cartList = cartDAO.getByEmailId(p.getName());
 		Long GrandTotal = cartDAO.getTotalAmount(p.getName());
 		
-		model.addAttribute("cartList", cartList);
+		model.addAttribute("cartList", cartDAO.listCartByStatus(p.getName(), "N"));
 		model.addAttribute("GrandTotal", GrandTotal);
 		model.addAttribute("isUserClickedAddtocart", "true");
+		System.out.println(cartDAO.listCartByStatus(p.getName(), "N"));
+		
+		if(cartDAO.listCartByStatus(p.getName(), "N").isEmpty())
+		{
+			model.addAttribute("isCartEmpty","true");
+		}
+		else
+		{
+			model.addAttribute("isCartEmpty","false");
+		}
 
 		return "userLogin";
 	}
@@ -82,7 +94,7 @@ public class CartController {
 				cart.setStatus('N');
 				cart.setTotal(product.getPrice() * cart.getQuantity());
 				cart.setId(user.getId());
-				cart.setDays(1);
+				cart.setDays((int) Math.floor((Math.random() * 10) + 1));
 
 				cartDAO.save(cart);
 			}
@@ -97,6 +109,7 @@ public class CartController {
 			model.addAttribute("product", product);
 			model.addAttribute("message", "Out of stock");
 			model.addAttribute("isUserClickedView", true);
+			model.addAttribute("isUser", true);
 			return "userLogin";
 		}
 	}
@@ -112,4 +125,9 @@ public class CartController {
 		return "redirect:mycart";
 	}
 
+
+@ModelAttribute
+public void adminCategory(Model model) {
+	model.addAttribute("isUser", "true");
+}
 }

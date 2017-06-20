@@ -32,7 +32,9 @@ public class HomeController {
 		List<Product> productList = productDAO.list();
 		model.addAttribute("productList",productList);
 		//model.addAttribute("message", "Thank you for visiting Shopping Cart");
+		model.addAttribute("isUser", true);
 		return "Home";
+		
 	}
 	
 	
